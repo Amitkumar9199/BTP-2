@@ -1,5 +1,12 @@
 Follow the Tutorial: https://medium.com/@alexanderyegorov_67403/how-to-compile-kernel-module-for-centos8-78287e9d145a
 
+You will get error in this command: `rpmbuild -bp — target=$(uname -m) kernel.spec`
+    
+    error: line 42: Unknown tag: define buildid .local
+    To resolve this error, you should check line 42 of your kernel.spec file.
+    It should be "%define buildid 1"
+
+
 After `make oldconfig` command select the Default values for new prompts.
 
 After `make menuconfig` command go to Networking support > Networking options > BPF based packet filtering framework (BPFILTER) 
